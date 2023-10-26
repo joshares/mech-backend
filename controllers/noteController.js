@@ -20,6 +20,7 @@ const createNotes = asyncHandler(async (req, res) => {
   console.log("start");
   console.log(req.body);
   if (!req.body) {
+    res.status(404);
     throw new Error("no feeds");
   }
   let { message, receiver } = req.body;
